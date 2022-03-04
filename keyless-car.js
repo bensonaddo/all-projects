@@ -29,4 +29,8 @@ function verify_age(){
         msg = "Powering On. Enjoy the ride!"
         alert(msg)
     }
+    else{
+        msg = "Please enter a number"
+        alert(msg);
+    }
 }
