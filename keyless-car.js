@@ -14,23 +14,28 @@
 var age = 0
 var msg;
 
+
 function verify_age(){
     alert("This car will only let you drive if you are over 18");
     age = prompt("Please enter your age?: ");
     if (age < 18){
         msg = "Sorry, you are too young to drive this car. Powering off"
-        alert(msg)
+        document.getElementById("main-response").innerHTML = msg;
+        // alert(msg)
     }
     else if (age == 18){
         msg = "Congratulations on your first year of driving. Enjoy the ride!"
-        alert(msg)
+        // alert(msg)
+        document.getElementById("main-response").innerHTML = msg;
     }
     else if(age >= 19){
         msg = "Powering On. Enjoy the ride!"
-        alert(msg)
+        // alert(msg)
+        document.getElementById("main-response").innerHTML = msg;
     }
     else{
         msg = "Please enter a number"
-        alert(msg);
+        // alert(msg);
+        document.getElementById("main-response").innerHTML = msg;
     }
 }

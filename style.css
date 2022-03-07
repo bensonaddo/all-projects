@@ -39,4 +39,9 @@ body {
     font-size: 30px;
 }
 
+#main-response {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+}
 
