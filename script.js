@@ -53,10 +53,16 @@ In the browser most code is event driven and writing interactive applications in
 
 To react to an event you listen for it and supply a function which will be called by the browser when the event occurs. This function is known as a callback. To read more, check out this link: https://blog.codeanalogies.com/2016/04/11/javascript-callbacks-explained-using-minions/ */
 
-for (var i = 0, len = ul.children.length; i < len; i++){
-    (function(index){
-        ul.children[i].onclick = function(){
-            ul.children[index].classList.add("done");
-        }
-    })(i);
+// Add cross line to all children inside the ul element
+function toggleOnOF(){
+    for (var i = 0, len = ul.children.length; i < len; i++){
+        (function(index){
+            ul.children[i].onclick = function(){
+                ul.children[index].classList.toggle("done");
+            }
+        })(i);
+    }
 }
+
+// Adding event listener to trigger off and on
+ul.addEventListener("click", toggleOnOF);
