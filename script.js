@@ -32,14 +32,11 @@ var newsfeed = [{
     timeline: "Yesterday, I picked up the wip job from John"
 }];
 
-/* Creating an alert to get inputs from users */
-var user_prompt = prompt("What's your username");
-var user_pwd_prompt = prompt("What's your password?");
-
 /*  Creating the signin prompt. 
     Validate against database record.
     Display Newsfeed for specific user
 */
+/*
 function signIn(usr, psw){
     if (usr == database[0].username && psw == database[0].password){
         console.log("Hi "+ newsfeed[1].username.toUpperCase()+", " + newsfeed[1].timeline);
@@ -56,5 +53,33 @@ function signIn(usr, psw){
         alert("Sorry, wrong username and password");
     }
 }
+*/
 
+// Validate user credentials functions
+function isUserValid(usr,psw){
+    // loop through database to find user
+    for (var i=0;i < database.length; i++){
+        if (database[i].username === usr && database[i].password === psw){
+            return true;
+        }  
+    }
+    return false;  
+}
+
+// signIn function
+function signIn(usr, psw){
+    // console.log(isUserValid(usr,psw));
+    if (isUserValid(usr,psw)){
+        console.log(newsfeed);
+    }
+    else {
+        alert("Sorry, wrong username and password");
+    }
+};
+
+/* Creating an alert to get inputs from users */
+var user_prompt = prompt("What\'s your username");
+var user_pwd_prompt = prompt("What\'s your password?");
+
+// Call the login function 
 signIn(user_prompt, user_pwd_prompt);
