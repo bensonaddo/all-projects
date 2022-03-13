@@ -84,6 +84,8 @@ const array = [
   console.log('MapArray', addQuestionMark);
   
   //Filter the array to only include users who are on team: red
+  let teamRed = array.filter(usr => usr.team === "red");
+  console.log('ArrayFilter', teamRed);
   
   
   //Find out the total score of all users using reduce
