@@ -1,32 +1,38 @@
-//condition ? expr1 : expr2;
+// Object definition
+const obj = {
+    player: "Bobby",
+    experience: 100,
+    wizardLevel: false,
+    record: "master"
+}
 
-// function isUserValid(bool) {
-//     return bool;
-// }
+//Access objects
+// Old way of getting objects
+/*
+const player = obj.player;
+const experience = obj.experience;
+let wizardLevel = obj.wizardLevel;
+let record = obj.record;
+*/
 
-// var answer = isUserValid(true) ? "You may enter" : "Access Denied";
+// New or Destructuring Objects
+const { player, experience } = obj;
+let { wizardLevel, record } = obj;
 
-// var automatedAnswer = "Your account # is " + ( isUserValid(false) ? "1234" : "Not available");
+console.log(player,experience,wizardLevel,record);
 
-// Switch Statements
-function moveCommand(direction){
-    var whatHappens;
-    switch (direction){
-        case "forward":
-            whatHappens = "You encountered a monster";
-            break;
-        case "back":
-            whatHappens = "You arrived home";
-            break;
-        case "right":
-            whatHappens = "You found a river";
-            break;
-        case "left":
-            whatHappens = "You run into a troll";
-            break;
-        default:
-            whatHappens = "Please enter a valid value: forward, back, right, left";
-    }
-    // This would return the value of what happens after the condition has been evaluated 
-    return whatHappens;
+// Template strings
+/*
+const name = "Sally";
+const age = 34;
+const pet = "horse";
+
+const greeting = `Hello ${name}, you seem to be ${age-10}. What a lovely ${pet} you have!`;
+
+console.log(greeting);
+*/
+
+// Default Arguements
+function greet(name="", age=30, pet='cat'){
+    return `Hello ${name}, you seem to be ${age-10}. What a lovely ${pet} you have!`;
 }
