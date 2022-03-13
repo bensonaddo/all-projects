@@ -9,4 +9,18 @@ let newArray = array.forEach(num => {
      double.push(num * 2);
 });
 // console.log(newArray);
-console.log(double);
+console.log('forEachDouble', double);
+
+// map, filter, reduce
+
+// map
+// Map is preffered more than forEach because it expects a return value and always creates a new array
+/*  
+    // Same as below
+    let mapArray = array.map((num) => {
+        return num * 5
+    });
+*/
+// Increase array Items by 5
+let mapArray = array.map(num => num * 5);
+console.log('mapArrayTimes5', mapArray);
