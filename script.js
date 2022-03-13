@@ -29,3 +29,11 @@ console.log('mapArrayTimes5', mapArray);
 // Filter all items greater than 5
 let filterArray = mapArray.filter(num => num > 5);
 console.log('FilterArray', filterArray);
+
+// reduce
+let reduceArray = mapArray.reduce((accumulator, num) => {
+    // Accumulator stores the previous stored value of the return statement starting from zero which is defined at the end of the return statement
+    // This also means the starting number would be 0 for accumulator
+    return accumulator + num;
+}, 0);
+console.log('ReduceArray', reduceArray);
