@@ -73,10 +73,15 @@ const array = [
     usr.username = usr.username + "!";
     return storeArray.push(usr);
   });
-  console.log(storeArray);
+  console.log('ForEach', storeArray);
   
   //Create an array using map that has all the usernames with a "? to each of the usernames
-  
+  let addQuestionMark = array.map(usr => {
+    usr.username = usr.username + "?";
+    return usr;
+  });
+
+  console.log('MapArray', addQuestionMark);
   
   //Filter the array to only include users who are on team: red
   
