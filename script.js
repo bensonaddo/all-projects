@@ -24,3 +24,8 @@ console.log('forEachDouble', double);
 // Increase array Items by 5
 let mapArray = array.map(num => num * 5);
 console.log('mapArrayTimes5', mapArray);
+
+// filter
+// Filter all items greater than 5
+let filterArray = mapArray.filter(num => num > 5);
+console.log('FilterArray', filterArray);
