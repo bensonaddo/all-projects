@@ -89,6 +89,10 @@ const array = [
   
   
   //Find out the total score of all users using reduce
+  let totalScore = array.reduce((acc,num) => {
+      return acc + num.score;
+  }, 0);
+  console.log('Reduce', totalScore);
   
   // (1), what is the value of i?
   // (2), Make this map function pure:
