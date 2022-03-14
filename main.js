@@ -41,5 +41,29 @@ obj.c = 5;
 console.log('Original', obj, 'clone', clone, 'clone2', clone2);
 
 
+let obj1 = {
+    a: 'a',
+    b: 'b',
+    c: {
+        deep: 'Try to copy me'
+    }
+};
+
+let newClone = Object.assign({}, obj1);
+let newClone2 = {...obj1};
+
+console.log('NewClone', newClone, 'NewClone2', newClone2);
+
+// Modify object with property deep
+// This would change both prototype since the copy
+// creates copies of root and not child objects
+// Therefore changing deep value for all
+obj1.c.deep = "Hahaha!!!";
+console.log('NewClone', newClone, 'NewClone2', newClone2);
+
+// To copy an object with child objects
+let superClone = JSON.parse(JSON.stringify(obj1));
+console.log('NewClone', newClone, 'NewClone2', newClone2, 'Super Clone', superClone);
+
 
 
